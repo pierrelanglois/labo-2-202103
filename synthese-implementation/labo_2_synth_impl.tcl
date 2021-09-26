@@ -59,8 +59,8 @@ program_hw_devices [get_hw_devices xc7a35t_0]
 
 # -------------------------------------------------------------------------------
 #
-# Bonus, partie 6C : extrait des métriques post-synthèse du module vote_majorite_qualifiee
-#
+# Bonus, partie 6A : extrait des métriques post-synthèse du module vote_majorite_qualifiee
+# Exemples de commandes, la liste est à compléter.
 # Les commandes données ici sont pour le FPGA présent sur la planchette Basys 3.
 #
 # -------------------------------------------------------------------------------
