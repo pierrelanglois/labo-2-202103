@@ -60,17 +60,17 @@ begin
    -- Circuit pour sérialiser l'accès aux quatre symboles à 7 segments.
    -- L'affichage contient quatre symboles chacun composé de sept segments et d'un point.
     process(all)
-	variable clkCount : unsigned(19 downto 0) := (others => '0');
-	begin
+    variable clkCount : unsigned(19 downto 0) := (others => '0');
+    begin
         if (clk'event and clk = '1') then
-			clkCount := clkCount + 1;		   
-		end if;
-		case clkCount(clkCount'left downto clkCount'left - 1) is 	-- L'horloge de 100 MHz est ramenée à environ 100 Hz en la divisant par 2^19
-			when "00" => an <= "1110"; seg <= symboles(0);
-			when "01" => an <= "1101"; seg <= symboles(1);
-			when "10" => an <= "1011"; seg <= symboles(2);
-			when others => an <= "0111"; seg <= symboles(3);
-		end case;
+            clkCount := clkCount + 1;           
+        end if;
+        case clkCount(clkCount'left downto clkCount'left - 1) is     -- L'horloge de 100 MHz est ramenée à environ 100 Hz en la divisant par 2^19
+            when "00" => an <= "1110"; seg <= symboles(0);
+            when "01" => an <= "1101"; seg <= symboles(1);
+            when "10" => an <= "1011"; seg <= symboles(2);
+            when others => an <= "0111"; seg <= symboles(3);
+        end case;
     end process;
         
 end arch;
