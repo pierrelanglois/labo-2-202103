@@ -20,10 +20,10 @@ entity vote_majorite_qualifiee is
         N_deputes : positive
     );
     port (     
-        votes_juges : in std_logic_vector(N_juges - 1 downto 0);
-        votes_senateurs : in std_logic_vector(N_senateurs - 1 downto 0);
-        votes_deputes : in std_logic_vector(N_deputes - 1 downto 0);
-        approbation : out std_logic
+        votes_juges : in std_logic_vector(N_juges - 1 downto 0);            -- trois vecteurs de bits, chacun représentant le vote d'une personne
+        votes_senateurs : in std_logic_vector(N_senateurs - 1 downto 0);    -- un '1' signifie "je vote pour", un '0' signifie "je vote contre"
+        votes_deputes : in std_logic_vector(N_deputes - 1 downto 0);        -- aucune abstention n'est permise
+        approbation : out std_logic                                         -- '1' == la résolution est approuvée
     );
 end vote_majorite_qualifiee;
 
